@@ -1,0 +1,221 @@
+---
+title: "A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles"
+subtitle: "By Anxhela Beluli"
+author: |
+  Hussain Hadah<sup>1,2</sup>
+  <br>
+  <div style="text-align: center; font-size: 0.8em; margin-top: 10px;">
+  <sup>1</sup>Economics Department, Tulane University, <sup>2</sup>The Murphy Institute
+  </div>
+
+date: "`r format(Sys.time(), '%B %d %Y')`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/tulane-fonts.css", "assets/tulane.css"]
+    self_contained: false # if true, fonts will be stored locally
+    seal: false # show a title slide with YAML information
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    nature:
+      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
+      navigation:
+        scroll: false # disable slide transitions by scrolling
+---
+
+class: title-slide
+
+# A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles
+
+## Discussant: Hussain Hadah
+
+.pull-left[
+**Paper by: Anxhela Beluli**
+
+**Discussant: Hussain Hadah**<sup>1,2</sup>
+
+<div style="color: white; font-size: 18px; margin-top: 10px;">
+`r format(Sys.time(), '%B %d, %Y')`
+</div>
+
+<div style="font-size: 0.8em; margin-top: 10px;">
+<sup>1</sup>The Murphy Institute, Tulane University<br>
+<sup>2</sup>Economics Department, Tulane University<br>
+</div>
+]
+
+---
+layout: true
+<div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;">Hussain Hadah (Tulane/Murphy Institute)  | `r format(Sys.time(), '%d %B %Y')`</div>
+
+<!--- `r rmarkdown::metadata$subtitle` | `r format(Sys.time(), '%d %B %Y')`-->
+
+```{r, load_refs, echo=FALSE, cache=FALSE, message=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE, 
+           bib.style = "authoryear", 
+           cite.style = 'authoryear', 
+           style = "markdown",
+           hyperlink = FALSE, 
+           dashed = FALSE)
+myBib <- ReadBib("assets/example.bib", check = FALSE)
+top_icon = function(x) {
+  icons::icon_style(
+    icons::fontawesome(x),
+    position = "fixed", top = 10, right = 10
+  )
+}
+```
+
+```{r setup, include=FALSE}
+# xaringanExtra::use_scribble() ## Draw on slides. Requires dev version of xaringanExtra.
+
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=4, fig.width=6,
+  out.width="748px", out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=F#, echo=F, warning=F, message=F
+  )
+```
+
+
+```{r, cache=FALSE, message=FALSE, warning=FALSE, include=TRUE, eval=TRUE, results=FALSE, echo=FALSE, tidy.opts = list(width.cutoff = 50), tidy = TRUE}
+## Load and install the packages that we'll be using today
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tictoc, parallel, pbapply, future, future.apply, furrr, RhpcBLASctl, memoise, here, foreign, mfx, tidyverse, hrbrthemes, estimatr, ivreg, fixest, sandwich, lmtest, margins, vtable, broom, modelsummary, stargazer, fastDummies, recipes, dummy, gplots, haven, huxtable, kableExtra, gmodels, survey, gtsummary, data.table, tidyfast, dtplyr, microbenchmark, ggpubr, tibble, viridis, wesanderson, censReg, rstatix, srvyr, formatR, sysfonts, showtextdb, showtext, thematic, sampleSelection, RefManageR, DT, googleVis, png, grid)
+# devtools::install_github("thomasp85/patchwork")
+remotes::install_github("mitchelloharawild/icons")
+remotes::install_github("ROpenSci/bibtex")
+
+# devtools::install_github("ajdamico/lodown")
+## My preferred ggplot2 plotting theme (optional)
+## https://github.com/hrbrmstr/hrbrthemes
+# scale_fill_ipsum()
+# scale_color_ipsum()
+font_add_google("Fira Sans", "firasans")
+font_add_google("Fira Code", "firasans")
+
+showtext_auto()
+
+theme_customs <- theme(
+  text = element_text(family = 'firasans', size = 16),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[6],
+    margin = margin(t = 2, r = 0, b = 7, l = 0, unit = "mm")
+  ),
+)
+
+colors <-  thematic::okabe_ito(5)
+
+# theme_set(theme_minimal() + theme_customs)
+theme_set(hrbrthemes::theme_ipsum() + theme_customs)
+## Set master directory where all sub-directories are located
+mdir <- "/Users/hhadah/Documents/GiT/urban-econ/slides/01-week1/tue"
+
+## Set working directory
+
+# COLOR PALLETES
+library(paletteer) 
+# paletteer_d("awtools::a_palette")
+# paletteer_d("suffrager::CarolMan")
+
+### COLOR BLIND PALLETES
+#paletteer_d("colorblindr::OkabeIto")
+#paletteer_d("colorblindr::OkabeIto_black")
+# paletteer_d("colorBlindness::paletteMartin")
+# paletteer_d("colorBlindness::Blue2DarkRed18Steps")
+# paletteer_d("colorBlindness::SteppedSequential5Steps")
+# paletteer_d("colorBlindness::PairedColor12Steps")
+# paletteer_d("colorBlindness::ModifiedSpectralScheme11Steps")
+colorBlindness <- paletteer_d("colorBlindness::Blue2Orange12Steps")
+cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+# scale_colour_paletteer_d("colorBlindness::ModifiedSpectralScheme11Steps", dynamic = FALSE)
+# To use for fills, add
+  scale_fill_manual(values="colorBlindness::Blue2Orange12Steps")
+
+# To use for line and point colors, add
+  scale_colour_manual(values="colorBlindness::Blue2Orange12Steps")
+  #<a><button>[Click me](#sources)</button></a>
+```
+
+```{css, echo=F}
+    /* Table width = 100% max-width */
+
+    .remark-slide table{
+        width: auto !important; /* Adjusts table width */
+    }
+
+    /* Change the background color to white for shaded rows (even rows) */
+
+    .remark-slide thead, .remark-slide tr:nth-child(2n) {
+        background-color: white;
+    }
+    .remark-slide thead, .remark-slide tr:nth-child(n) {
+        background-color: white;
+    }
+```
+
+---
+## Research Question
+
+### What is the effect of .brand-mardigras[SNAP work requirements] age extension on program participation, food insecurity, non-employment, and well-being outcomes?
+<br>
+
+### The paper focuses on the outcomes of able-bodied adults without dependents (ABAWDs)
+- AWAWDs are defined as childless individuals with no disabilities 
+<br>
+
+
+### Leverages the .brand-crawfest[policy change] in **2023** that extended the age eligibility for SNAP work requirements from 18-49 to 18-54 years old and it's effect on program take-up and labor market outcomes
+
+---
+## Method and Results
+
+### .brand-crawfest[Difference-in-Differences] (DiD) Approach
+
+<br>
+
+### Age requirement extension:
+
+<ol>
+  <li><h4>Decreased SNAP participation</h4></li>
+  <li><h4>Decrease in food insecurity</h4></li>
+  <li><h4>No significant change in non-employment</h4></li>
+</ol>
+
+---
+## Questions for the Author
+
+1. States can get waivers from these requirements, wouldn't this mean there is time-varying treatment?
+2. What method do you use to correctly specify the diff-in-diff estimand with conditional parallel trends?
+
+---
+## Suggestions
+
+### It is standard practice to show diff-in-diff results in event-study format to visually assess parallel trends and dynamic treatment effects
+
+### Use triple-differences to compare states with and without waivers to better isolate the effect of the policy change
+
+```{r, echo=FALSE, warning=FALSE, out.width="75%", fig.show='hold', fig.align='center', eval = FALSE}
+
+# Plot the image
+grid.raster(readPNG("assets/Image02.png"))
+```
+
+```{r gen_pdf, include = FALSE, cache = FALSE, eval = TRUE}
+library(renderthis)
+# https://hhadah.github.io/appam-discussant-slides/beluli/beluli.html
+
+to_pdf(from = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.html", 
+       to = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.pdf")
+to_pdf(from = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.html")
+```

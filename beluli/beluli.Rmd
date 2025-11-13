@@ -202,8 +202,17 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 ## Suggestions
 
 ### It is standard practice to show diff-in-diff results in event-study format to visually assess parallel trends and dynamic treatment effects
+<br>
 
 ### Use triple-differences to compare states with and without waivers to better isolate the effect of the policy change
+<br>
+
+### There needs to be a discussion of the assumptions that would allow for the identification of causal effects
+
+  - Stable Unit Treatment Value Assumption (SUTVA)
+  - No Anticipation
+  - Parallel Trends
+
 
 ```{r, echo=FALSE, warning=FALSE, out.width="75%", fig.show='hold', fig.align='center', eval = FALSE}
 

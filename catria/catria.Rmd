@@ -176,6 +176,7 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 
 ### The paper uses the staggered take-up of work requirements after the great recession as a .brand-crawfest[policy variation]
 
+
 ---
 ## Method and Results
 
@@ -197,6 +198,7 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 
 1. What do you mean that you fail to find of work requirements on employment outcomes that are not attenuated by the inclusion of covariates?
 2. Using Callaway & Sant’Anna (2021) forces you to assign dichotomous treatment status---prevents you from using the county to PUMA treatment assignment used in the literature. Did you try to use a continuous treatment variable using other DiD methods?
+3. At what level are the standard errors clustered? 
 
 ---
 ## Suggestions
@@ -207,7 +209,7 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 ### To prevent confusion, I suggest explaining in details the policy variation as a result of the three-month 10 percent unemployment rate cutoff to individual counties during the Great Recession
 <br>
 
-### You mention that DDD to take advantage of additional conditions to identify a more robust causal effect. Not having a package to do the estimation is not a valid reason to not use DDD. 
+### Either remove the mention that DDD to take advantage of additional conditions to identify a more robust causal effect or actually using DDD. Not having a package to do the estimation is not a valid reason to not use DDD. 
 
 
 

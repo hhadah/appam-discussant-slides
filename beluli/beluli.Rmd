@@ -30,8 +30,6 @@ class: title-slide
 
 # A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles
 
-## Discussant: Hussain Hadah
-
 .pull-left[
 **Paper by: Anxhela Beluli**
 

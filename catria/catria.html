@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles</title>
+    <title>Work Requirements Under Review: Impacts of SNAP Time Limits on Able-Bodied Adults without Dependents</title>
     <meta charset="utf-8" />
-    <script src="beluli_files/header-attrs/header-attrs.js"></script>
-    <link href="beluli_files/remark-css/default.css" rel="stylesheet" />
+    <script src="catria_files/header-attrs/header-attrs.js"></script>
+    <link href="catria_files/remark-css/default.css" rel="stylesheet" />
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -26,10 +26,11 @@
 
 class: title-slide
 
-# A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles
+# Work Requirements Under Review: Impacts of SNAP Time Limits on Able-Bodied Adults without Dependents
+
 
 .pull-left[
-**Paper by: Anxhela Beluli**
+**Paper by: Catria Gadwah-Meaden**
 
 **Discussant: Hussain Hadah**&lt;sup&gt;1,2&lt;/sup&gt;
 
@@ -47,7 +48,7 @@ November 13, 2025
 layout: true
 &lt;div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;"&gt;Hussain Hadah (Tulane/Murphy Institute)  | 13 November 2025&lt;/div&gt;
 
-&lt;!--- By Anxhela Beluli | 13 November 2025--&gt;
+&lt;!--- By Catria Gadwah-Meaden | 13 November 2025--&gt;
 
 
 
@@ -74,54 +75,50 @@ layout: true
 &lt;/style&gt;
 
 ---
-## Research Question
+## Research Questions
 
-### What is the effect of .brand-mardigras[SNAP work requirements] age extension on program participation, food insecurity, non-employment, and well-being outcomes?
+
+### How do work requirements for SNAP recipients affect able-bodied adults without dependents (ABAWDs)?
 &lt;br&gt;
 
-### The paper focuses on the outcomes of able-bodied adults without dependents (ABAWDs)
-- AWAWDs are defined as childless individuals with no disabilities 
+### How do work requirements for SNAP recipients affect the employment outcomes of ABAWDs?
 &lt;br&gt;
 
 
-### Leverages the .brand-crawfest[policy change] in **2023** that extended the age eligibility for SNAP work requirements from 18-49 to 18-54 years old and it's effect on program take-up and labor market outcomes
+### The paper uses the staggered take-up of work requirements after the great recession as a .brand-crawfest[policy variation]
 
 ---
 ## Method and Results
 
-### .brand-crawfest[Difference-in-Differences] (DiD) Approach
+### Uses .brand-crawfest[difference-in-differences (DiD)] to estimate the causal effect of work requirements
+
+  - Uses Callaway &amp; Sant’Anna (2021) 
 
 &lt;br&gt;
 
-### Age requirement extension:
+### The adoption of work requirements led to a:
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;h4&gt;Decreased SNAP participation&lt;/h4&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;h4&gt;Decrease in food insecurity&lt;/h4&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;h4&gt;No significant change in non-employment&lt;/h4&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;h4&gt;11% decrease in SNAP participation&lt;/h4&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;h4&gt;No effect on employment outcomes&lt;/h4&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 ---
 ## Questions for the Author
 
-1. States can get waivers from these requirements, wouldn't this mean there is time-varying treatment?
-2. What method do you use to correctly specify the diff-in-diff estimand with conditional parallel trends?
+1. What do you mean that you fail to find of work requirements on employment outcomes that are not attenuated by the inclusion of covariates?
+2. Using Callaway &amp; Sant’Anna (2021) forces you to assign dichotomous treatment status---prevents you from using the county to PUMA treatment assignment used in the literature. Did you try to use a continuous treatment variable using other DiD methods?
 
 ---
 ## Suggestions
 
-### It is standard practice to show diff-in-diff results in event-study format to visually assess parallel trends and dynamic treatment effects
+### Showing the DiD results before conditional parallel trends assumption is, in my opinion, important for transparency
 &lt;br&gt;
 
-### Use triple-differences to compare states with and without waivers to better isolate the effect of the policy change
+### To prevent confusion, I suggest explaining in details the policy variation as a result of the three-month 10 percent unemployment rate cutoff to individual counties during the Great Recession
 &lt;br&gt;
 
-### There needs to be a discussion of the assumptions that would allow for the identification of causal effects
-
-  - Stable Unit Treatment Value Assumption (SUTVA)
-  - No Anticipation
-  - Parallel Trends
-
+### You mention that DDD to take advantage of additional conditions to identify a more robust causal effect. Not having a package to do the estimation is not a valid reason to not use DDD. 
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: "A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles"
-subtitle: "By Anxhela Beluli"
+title: "Work Requirements Under Review: Impacts of SNAP Time Limits on Able-Bodied Adults without Dependents"
+subtitle: "By Catria Gadwah-Meaden"
 author: |
   Hussain Hadah<sup>1,2</sup>
   <br>
@@ -28,12 +28,11 @@ output:
 
 class: title-slide
 
-# A SNAP in Age Eligibility: The Early Effects of Work Requirements on Program Participation and Financial Struggles
+# Work Requirements Under Review: Impacts of SNAP Time Limits on Able-Bodied Adults without Dependents
 
-## Discussant: Hussain Hadah
 
 .pull-left[
-**Paper by: Anxhela Beluli**
+**Paper by: Catria Gadwah-Meaden**
 
 **Discussant: Hussain Hadah**<sup>1,2</sup>
 
@@ -49,7 +48,7 @@ class: title-slide
 
 ---
 layout: true
-<div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;">`r rmarkdown::metadata$author` (Tulane) | `r rmarkdown::metadata$subtitle` | `r format(Sys.time(), '%d %B %Y')`</div>
+<div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;">Hussain Hadah (Tulane/Murphy Institute)  | `r format(Sys.time(), '%d %B %Y')`</div>
 
 <!--- `r rmarkdown::metadata$subtitle` | `r format(Sys.time(), '%d %B %Y')`-->
 
@@ -164,17 +163,59 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
     }
 ```
 
-```{r, echo=FALSE, warning=FALSE, out.width="75%", fig.show='hold', fig.align='center', eval = FALSE}
+---
+## Research Questions
 
-# Plot the image
-grid.raster(readPNG("assets/Image02.png"))
-```
 
-```{r gen_pdf, include = FALSE, cache = FALSE, eval = FALSE}
+### How do work requirements for SNAP recipients affect able-bodied adults without dependents (ABAWDs)?
+<br>
+
+### How do work requirements for SNAP recipients affect the employment outcomes of ABAWDs?
+<br>
+
+
+### The paper uses the staggered take-up of work requirements after the great recession as a .brand-crawfest[policy variation]
+
+---
+## Method and Results
+
+### Uses .brand-crawfest[difference-in-differences (DiD)] to estimate the causal effect of work requirements
+
+  - Uses Callaway & Sant’Anna (2021) 
+
+<br>
+
+### The adoption of work requirements led to a:
+
+<ol>
+  <li><h4>11% decrease in SNAP participation</h4></li>
+  <li><h4>No effect on employment outcomes</h4></li>
+</ol>
+
+---
+## Questions for the Author
+
+1. What do you mean that you fail to find of work requirements on employment outcomes that are not attenuated by the inclusion of covariates?
+2. Using Callaway & Sant’Anna (2021) forces you to assign dichotomous treatment status---prevents you from using the county to PUMA treatment assignment used in the literature. Did you try to use a continuous treatment variable using other DiD methods?
+
+---
+## Suggestions
+
+### Showing the DiD results before conditional parallel trends assumption is, in my opinion, important for transparency
+<br>
+
+### To prevent confusion, I suggest explaining in details the policy variation as a result of the three-month 10 percent unemployment rate cutoff to individual counties during the Great Recession
+<br>
+
+### You mention that DDD to take advantage of additional conditions to identify a more robust causal effect. Not having a package to do the estimation is not a valid reason to not use DDD. 
+
+
+
+```{r gen_pdf, include = FALSE, cache = FALSE, eval = TRUE}
 library(renderthis)
-# https://hhadah.github.io/appam-discussant-slides/beluli/beluli.html
+# https://hhadah.github.io/appam-discussant-slides/catria/catria.html
 
-to_pdf(from = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.html", 
-       to = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.pdf")
-to_pdf(from = "~/Documents/GiT/appam-discussant-slides/beluli/beluli.html")
+to_pdf(from = "~/Documents/GiT/appam-discussant-slides/catria/catria.html", 
+       to = "~/Documents/GiT/appam-discussant-slides/catria/catria.pdf")
+to_pdf(from = "~/Documents/GiT/appam-discussant-slides/catria/catria.html")
 ```
